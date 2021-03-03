@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SBApp</string>
+    <string name="sign_in">Sign in 👉</string>
+    <string name="hello_world_n_n_go_ahead_and_sign_up_in_to_use_this_app">Hello World!\n👋👋👋\n Go ahead and Sign Up/In to use this app.</string>
+    <string name="sign_up">Sign Up 📝</string>
+</resources>
