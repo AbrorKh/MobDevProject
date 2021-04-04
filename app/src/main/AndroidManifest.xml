@@ -18,7 +18,16 @@
         </activity>
         <activity android:name=".FBSignUp" />
         <activity android:name=".FBSignIn" />
-        <activity android:name=".HomePage" />
+        <activity android:name=".HomePage" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ChatPage" />
+        <activity android:name=".SessionPage" />
+
     </application>
 
 </manifest>

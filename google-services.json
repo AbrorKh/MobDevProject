@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "80759760344",
+    "project_id": "sbapp-389c3",
+    "storage_bucket": "sbapp-389c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80759760344:android:27e02d40ba1384472f3ead",
+        "android_client_info": {
+          "package_name": "com.example.sbapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "80759760344-ef83ugtb9a8j1re4qo9tg9q94fmb937m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAffGI0wJvqqoGTQohdpI7Pd3AeFvZ5EQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "80759760344-ef83ugtb9a8j1re4qo9tg9q94fmb937m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
