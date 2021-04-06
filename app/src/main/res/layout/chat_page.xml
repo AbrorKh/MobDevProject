@@ -1,50 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:Buttonandroid="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_500">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="69dp"
-        android:layout_marginBottom="661dp"
-        android:text="Communications"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="36sp"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="16dp" />
-
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="351dp"
-        android:layout_height="42dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="9dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Message..."
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="668dp" />
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="Enter your nickname!"
+        android:textSize="30dp"
+        android:background="@drawable/edittext"
+        android:padding="10dp"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Go to chat"
+        android:id="@+id/enterBtn"/>
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="42dp"
-        android:layout_height="48dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="3dp"
-        android:background="#FFFFFF"
-        app:srcCompat="@android:drawable/ic_menu_send"
-        tools:layout_editor_absoluteX="363dp"
-        tools:layout_editor_absoluteY="667dp" />
+
+
+
 </RelativeLayout>
