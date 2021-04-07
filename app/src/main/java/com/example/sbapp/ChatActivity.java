@@ -4,7 +4,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Camera;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.BidiFormatter;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,8 +30,12 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -37,12 +46,13 @@ import okhttp3.WebSocketListener;
 public class ChatActivity extends AppCompatActivity implements TextWatcher {
     private String name;
     private WebSocket webSocket;
-    private String SERVER_PATH = "ws://100.64.2.145:3000";
+    private String SERVER_PATH = "ws://64.227.13.127:80";
     private EditText messageEdit;
-    private View sendBtn, pickImgBtn;
+    private View sendBtn, pickImgBtn, cameraIcon;
     private RecyclerView recyclerView;
     private int IMAGE_REQUEST_ID = 1;
     private MessageAdapter messageAdapter;
+//    static final int REQUEST_IMAGE_CAPTURE = 10;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -94,7 +104,7 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
         public void onOpen(WebSocket webSocket, Response response) {
             super.onOpen(webSocket, response);
             runOnUiThread(() -> {
-                Toast.makeText(ChatActivity.this, "Socket Connection Successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ChatActivity.this, "You are online!!!", Toast.LENGTH_SHORT).show();
 
                 initializeView();
             });
@@ -131,6 +141,17 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
         messageAdapter = new MessageAdapter(getLayoutInflater());
         recyclerView.setAdapter(messageAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+//        camera
+//        cameraIcon = findViewById(R.id.cameraic);
+//        cameraIcon.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                // Code here executes on main thread after user presses button
+//
+//                dispatchTakePictureIntent();
+//            }
+//        });
+
 
         messageEdit.addTextChangedListener(this);
 
@@ -202,4 +223,52 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
             e.printStackTrace();
         }
     }
+
+//    camera
+//    String currentPhotoPath;
+//
+//    private File createImageFile() throws IOException {
+//        // Create an image file name
+//        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+//        String imageFileName = "JPEG_" + timeStamp + "_";
+//        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+//        File image = File.createTempFile(
+//                imageFileName,  // prefix /
+//                ".jpg",         // suffix /
+//                storageDir      // directory /
+//        );
+//
+//        // Save a file: path for use with ACTION_VIEW intents
+//        currentPhotoPath = image.getAbsolutePath();
+//
+//        return image;
+//    }
+//
+//    private void dispatchTakePictureIntent() {
+//        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        // Ensure that there's a camera activity to handle the intent
+//        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+//            // Create the File where the photo should go
+//            File photoFile = null;
+//            try {
+//                photoFile = createImageFile();
+//            } catch (IOException ex) {
+//
+//            }
+//            // Continue only if the File was successfully created
+//            if (photoFile != null) {
+//                //Toast.makeText(ChatPage.this, "SIGNAL C", Toast.LENGTH_SHORT).show();/////////////////////////////////////
+//                Uri photoURI = FileProvider.getUriForFile(this,
+//                        "com.example.provider.FileProvider",
+//                        photoFile);
+//                 /*catch (Exception ex) {
+//                    TextView text = findViewById(R.id.textView);
+//                    text.setText(ex.toString());///////////////////////
+//                }*/
+//                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+//                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+//            }
+//        }
+//    }
+    
 }

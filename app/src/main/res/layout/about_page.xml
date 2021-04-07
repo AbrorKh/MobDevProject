@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_500">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="799dp"
+        android:text="About"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="3dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-2dp"
+        android:lineSpacingExtra="4sp"
+        android:text="Welcome to the College Study Buddy Application!  \n\nOur Vision\nDue to the covid 19 pandemic, communication has been a major issue between students, instructors, and the TA. Cumbersome communication methods such as email are often not timely enough for high-priority questions and organizing events/meetups can often be difficult. This often leads to late submissions and a penalty for many students which can be solved through our application. Our goal is to create a bridge between the students and the TA to make communication more efficient.  \n\nWho We Are?\nJust like every college student, we are a team of developers trying to help students have a better learning experience in college. We started off as strangers and ended up working days and nights to aid students in the process of earning their degrees.\n\nVersion: 1.0.0"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="127dp" />
+</RelativeLayout>

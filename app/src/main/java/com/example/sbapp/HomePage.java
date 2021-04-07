@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -33,29 +34,32 @@ public class HomePage extends AppCompatActivity {
         sessions = findViewById(R.id.sessionIco);
         chatText = findViewById(R.id.chatText);
         sessionsText = findViewById(R.id.sessionText);
+
+
+
 //subtitles onclicklisteners
         chatText.setOnClickListener(v -> {
             startActivity(new Intent(HomePage.this, ChatPage.class));
             finish();
-            Toast.makeText(HomePage.this,"Communications feature will be enabled soon...", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(HomePage.this,"Communications feature will be enabled soon...", Toast.LENGTH_SHORT).show();
         });
 
         sessionsText.setOnClickListener(v -> {
             startActivity(new Intent(HomePage.this, SessionPage.class));
             finish();
-            Toast.makeText(HomePage.this,"Sessions feature will be enabled soon...", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(HomePage.this,"Sessions feature will be enabled soon...", Toast.LENGTH_SHORT).show();
         });
         //icons onclicklisteners
         chat.setOnClickListener(v -> {
             startActivity(new Intent(HomePage.this, ChatPage.class));
             finish();
-            Toast.makeText(HomePage.this,"Communications feature will be enabled soon...", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(HomePage.this,"Communications feature will be enabled soon...", Toast.LENGTH_SHORT).show();
         });
 
         sessions.setOnClickListener(v -> {
             startActivity(new Intent(HomePage.this, SessionPage.class));
             finish();
-            Toast.makeText(HomePage.this,"Sessions feature will be enabled soon...", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(HomePage.this,"Sessions feature will be enabled soon...", Toast.LENGTH_SHORT).show();
         });
 
         button.setOnClickListener(v -> {
@@ -69,18 +73,28 @@ public class HomePage extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
+
         return true;
     }
-    //    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch(item.getItemId()){
-//            case R.id.info:
-//                Toast.makeText(HomePage.this, "About info page will be enabled soon...", Toast.LENGTH_SHORT).show();
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.info:
+                Intent intent = new Intent(HomePage.this, AboutPage.class);
+                startActivity(intent);
+                finish();
+                return true;
 //            case R.id.student:
-//                Toast.makeText(HomePage.this, "Profile page will be enabled soon...", Toast.LENGTH_SHORT).show();
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+//                Intent intent1 = new Intent(HomePage.this, StudentPage.class);
+//                startActivity(intent1);
+//                finish();
+//                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     @Override
     public void onBackPressed() {

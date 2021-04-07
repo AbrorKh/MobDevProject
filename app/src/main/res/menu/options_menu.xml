@@ -5,8 +5,4 @@
         android:icon="@drawable/ic_info"
         android:title="About"
         app:showAsAction="ifRoom"/>
-    <item android:id="@+id/student"
-        android:icon="@drawable/ic_st"
-        android:title="Student"
-        app:showAsAction="ifRoom"/>
 </menu>
